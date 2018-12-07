@@ -1,18 +1,28 @@
 <template>
   <div id="app">
     <header>
-      <span>Vue.js PWA</span>
+      <span>Spotify Extension PWA</span>
     </header>
     <main>
+      <login/>
       <img src="./assets/logo.png" alt="Vue.js PWA">
       <router-view></router-view>
     </main>
+    <main/>
   </div>
 </template>
 
 <script>
+import Login from './components/Login.vue';
+import Main from './components/Main.vue';
+
+
 export default {
-  name: 'app'
+  name: 'app',
+  components:{
+    Login,
+    Main
+  }
 }
 </script>
 
