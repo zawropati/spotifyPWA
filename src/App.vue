@@ -1,34 +1,34 @@
 <template>
   <div id="app">
     <header>
-      <span>Spotify Extension PWA</span>
+      <router-link to="/">
+        <img class='logo' src='./imgs/gettogetherpng.png' alt='logo'>
+      </router-link>
+
+      <Login color='orange' v-if="!$root.token"/>
+      <Login color='blue'/>
+      <router-link to="/login" v-if="!$root.token">Login</router-link>
+      <router-link to="/main" v-else>Logout</router-link>
     </header>
-    <main>
-      <login/>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
-      <router-view></router-view>
-    </main>
-    <main/>
+    {{ $root.token }}
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Login from './components/Login.vue';
-import Main from './components/Main.vue';
-
-
+import Login from '@/components/Login'
 export default {
   name: 'app',
-  components:{
-    Login,
-    Main
-  }
+  components:{Login},
+  methods: {}
 }
 </script>
 
 <style>
-body {
-  margin: 0;
+body{
+	background-color: pink;
+  padding: 0px;
+  margin: 0px;
 }
 
 #app {
@@ -38,27 +38,9 @@ body {
   color: #2c3e50;
 }
 
-main {
-  text-align: center;
-  margin-top: 40px;
-}
-
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
-  color: #ffffff;
-}
-
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
+.logo {
+  /* position: absolute; */
+  left: 15px;
+  top: 15px;
 }
 </style>

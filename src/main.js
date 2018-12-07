@@ -13,5 +13,14 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App },
+  data: {
+    token: ''
+  },
+  created () {
+    if (window.location.hash.length > 30) {
+      this.token = window.location.hash.split('access_token=')[1].split('&token_type')[0]
+      if (this.token) this.$router.push('/')
+    }
+  }
 })

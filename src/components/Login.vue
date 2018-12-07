@@ -1,11 +1,17 @@
 <template>
-    <button class="login-btn" @click.prevent="getSpotifyUser">Login</button>
+    <button
+        class="login-btn"
+        @click.prevent="getSpotifyUser"
+        :style="{'background-color': color}">
+        Login
+    </button>
 </template>
 
 <script>
 export default {
   name: 'Login',
   //on click redirect to external page
+  props: ['color'],
   
   methods: {
     getSpotifyUser() {

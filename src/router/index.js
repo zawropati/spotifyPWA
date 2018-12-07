@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Start from '@/components/Start'
-import Main from '@/components/Main'
+import Content from '@/components/Content'
+import Login from '@/components/Login'
 
 Vue.use(Router)
 
@@ -14,8 +15,14 @@ export default new Router({
     },
     {
       path: '/main',
-      name: 'Main',
-      component: Main
+      name: 'Content',
+      component: Content
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login,
+      props: {color: 'red'}
     }
   ]
 })

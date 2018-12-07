@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'Main',
+  name: 'Content',
     data() {
   return {
         myMusic: 'https://api.spotify.com/v1/me/top/',
