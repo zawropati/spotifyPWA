@@ -10,7 +10,6 @@
 export default {
   name: 'Start'
 }
-// http://localhost:8080/?code=AQBqCG_XdMMG4b2LcvDZCUHq94OgefzJQNAQyC10cdR7lSYq3V9i6PnxFB4Aodb2D1KDL7l-_trNxnHS4wIipCD40uWq2emj4aIU0jGXduIgBN3rYkQfzyiFB49Rql2MFhSPDD9NxPviNxYVT9PpflAoufvbG_ta_EQ5NWtRGy2VAIXhDq2WluDXu2hYgz_FoMKhZ6ljooT4HgeHY1dcGvqDONXbra_zwhEU00--Pmlz2g#/
 
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -9,14 +9,35 @@ export default {
   
   methods: {
     getSpotifyUser() {
-      var local = 'http://localhost:8080/#/main/'
+      var local = 'http://localhost:8080/#/main//'
       window.location.href = 'https://accounts.spotify.com/authorize' +
       '?response_type=token' +
       '&client_id=' + "1532ae78c09f4ff58bbbd624f7a47f3b" +
       '&redirect_uri=' + encodeURIComponent(local);          
       console.log(local);
-    },
-    /* getUserData() {
+    }
+
+    /*getSpotifyUser() {  
+    function login(callback) {
+        var CLIENT_ID = '1532ae78c09f4ff58bbbd624f7a47f3b';
+        var REDIRECT_URI = 'http://localhost:8080/#/main//';
+        function getLoginURL(scopes) {
+            return 'https://accounts.spotify.com/authorize?client_id=' + CLIENT_ID +
+              '&redirect_uri=' + encodeURIComponent(REDIRECT_URI) +
+              '&scope=' + encodeURIComponent(scopes.join(' ')) +
+              '&response_type=token';
+        }
+        window.addEventListener("message", function(event) {
+            var hash = JSON.parse(event.data);
+            if (hash.type == 'access_token') {
+                callback(hash.access_token);
+            }
+        }, false);
+        
+        //var w = window.open(url,'Spotify','menubar=no,location=no,resizable=no,scrollbars=no,status=no, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
+    }
+
+    /*getUserData() {
       axios({
           method: 'get',
           url: 'https://api.spotify.com/v1/me',
@@ -26,6 +47,7 @@ export default {
       }).then(function(response) {
           console.log(response);
       })
+  }
   }*/
   }
 }
