@@ -1,7 +1,9 @@
 <template>
     <div class="songs">
         <h2>Here we will have songs</h2>
-        {{ myArtists }}
+        <div class="col">
+        {{ myArtists.items[1].track.name }}
+        </div>
     </div>
 </template>
 
@@ -10,7 +12,7 @@ export default {
   name: 'Content',
     data() {
   return {
-        myMusic: 'https://api.spotify.com/v1/me/top/',
+        myMusic: 'https://api.spotify.com/v1/me/tracks',
         myArtists: []
     }
   },
@@ -19,10 +21,12 @@ export default {
   },
   methods: {
     getUserArtists() {
+      console.log(this.$root.token)
       var that = this
-       this.$http.get(this.myMusic + "artists").then(function(response) {
+       this.$http.get(this.myMusic, {headers:{'Authorization': 'Bearer ' + this.$root.token}}).then(function(response) {
         that.myArtists = response.data;
-      }) 
+      },
+      ) 
     },
   }
   //on click redirect to external page

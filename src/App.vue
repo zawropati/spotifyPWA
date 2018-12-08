@@ -2,7 +2,7 @@
   <div id="app">
     <header>
       <router-link to="/">
-        <img class='logo' src='./imgs/gettogetherpng.png' alt='logo'>
+        <img class='logo' src='./imgs/Spotifytogetherlogo.png' alt='logo'>
       </router-link>
     </header>
     {{ $root.token }}
@@ -42,6 +42,7 @@ body, html{
 .logo {
   padding-left: 15px;
   padding-top: 15px;
+  width: 20%;
 }
 
 @keyframes Gradient{
