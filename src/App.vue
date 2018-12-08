@@ -4,11 +4,6 @@
       <router-link to="/">
         <img class='logo' src='./imgs/gettogetherpng.png' alt='logo'>
       </router-link>
-
-      <Login color='orange' v-if="!$root.token"/>
-      <Login color='blue'/>
-      <router-link to="/login" v-if="!$root.token">Login</router-link>
-      <router-link to="/main" v-else>Logout</router-link>
     </header>
     {{ $root.token }}
     <router-view></router-view>
@@ -16,22 +11,28 @@
 </template>
 
 <script>
-import Login from '@/components/Login'
 export default {
   name: 'app',
-  components:{Login},
   methods: {}
 }
 </script>
 
 <style>
-body{
-	background-color: pink;
+header{
+  position: absolute;
+  width: 100%;
+}
+body, html{
   padding: 0px;
   margin: 0px;
+  height: 100%;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
 }
 
 #app {
+  height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,8 +40,19 @@ body{
 }
 
 .logo {
-  /* position: absolute; */
-  left: 15px;
-  top: 15px;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+@keyframes Gradient{
+  0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
 </style>
