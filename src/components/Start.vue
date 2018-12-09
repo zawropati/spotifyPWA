@@ -6,7 +6,6 @@
     <h2>
       Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.
     </h2>
-      <Content/>
     <Login color='orange' v-if="!$root.token"/>
   </div>
 </template>
@@ -20,7 +19,7 @@ export default {
   components:{
     Login,
     Content
-    }
+  }
 }
 </script>
 
@@ -35,14 +34,12 @@ export default {
   text-align: center;
   padding: 0 20px;
 }
-
 h1{
   font-size: 3rem;
   line-height: 1;
   margin-top: 15px;
   margin-bottom: 25px;
 }
-
 h2{
   font-size: 0.75rem;
   line-height: 1.55;
