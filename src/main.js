@@ -20,7 +20,13 @@ new Vue({
   created () {
     if (window.location.hash.includes('access_token=')) {
       this.token = window.location.hash.split('access_token=')[1].split('&token_type')[0]
-      if (this.token) this.$router.push('/')
+      if (this.token) {
+        this.$router.push('/main')
+      }
+    }
+    // redirect to login if no token
+    else if(!this.token) {
+      this.$router.push('/')
     }
   }
 })
