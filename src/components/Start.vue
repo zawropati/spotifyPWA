@@ -6,15 +6,21 @@
     <h2>
       Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.
     </h2>
+      <Content/>
     <Login color='orange' v-if="!$root.token"/>
   </div>
 </template>
 
 <script>
 import Login from '@/components/Login'
+import Content from '@/components/Content'
+
 export default {
   name: 'Start',
-  components:{Login},
+  components:{
+    Login,
+    Content
+    }
 }
 </script>
 
