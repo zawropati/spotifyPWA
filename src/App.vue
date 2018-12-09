@@ -5,7 +5,6 @@
         <img class='logo' src='./imgs/Spotifytogetherlogo.png' alt='logo'>
       </router-link>
     </header>
-    {{ $root.token }}
     <router-view></router-view>
   </div>
 </template>
@@ -30,7 +29,6 @@ body, html{
 	background-size: 400% 400%;
   animation: Gradient 15s ease infinite;
 }
-
 #app {
   height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -38,13 +36,11 @@ body, html{
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
-
 .logo {
   padding-left: 15px;
   padding-top: 15px;
-  width: 20%;
+  height: 10vh;
 }
-
 @keyframes Gradient{
   0% {
 		background-position: 0% 50%
