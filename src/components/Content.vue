@@ -1,8 +1,8 @@
 <template>
-  <div class="songs">
+  <div class="myMusic">
     <h2>Here we will have songs</h2>
-    <div class="track" v-for="track in myMusic">
-      <span class="artist" v-for="artist in track.artists">{{artist.name}}</span>
+    <div class="myTracks" v-for="track in myMusic">
+      <span class="myArtists" v-for="artist in track.artists">{{artist.name}}</span>
       {{ track.name }}
       <img :src='track.album.images[2].url'>
     </div>
@@ -14,7 +14,7 @@ export default {
   name: "Content",
   data() {
     return {
-      myMusicURL: "https://api.spotify.com/v1/me/top/tracks",
+      myMusicURL: "https://api.spotify.com/v1/me/top/tracks?limit=50",
       myMusic: []
     };
   },
@@ -34,13 +34,11 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.login-btn {
-  padding: 5px 15px;
-  font-size: 15px;
-}
-.track {
+.myTracks {
   border: red solid 1px;
+}
+.myMusic{
+  padding-top: 10vh;
 }
 </style>
