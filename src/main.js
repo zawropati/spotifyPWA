@@ -18,7 +18,7 @@ new Vue({
     token: ''
   },
   created () {
-    if (window.location.hash.includes('acess_token=')) {
+    if (window.location.hash.includes('access_token=')) {
       this.token = window.location.hash.split('access_token=')[1].split('&token_type')[0]
       if (this.token) this.$router.push('/')
     }

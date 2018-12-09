@@ -16,7 +16,7 @@ export default {
   methods: {
     getSpotifyUser() {
       var local = 'http://localhost:8080/#/main//'
-      var scopes = 'user-library-read user-library-modify'
+      var scopes = 'user-library-read user-library-modify user-top-read'
       window.location.href = 'https://accounts.spotify.com/authorize' +
       '?response_type=token' + 
       '&client_id=' + "1532ae78c09f4ff58bbbd624f7a47f3b" +
