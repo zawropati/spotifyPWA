@@ -17,6 +17,22 @@ export default {
 </script>
 
 <style>
+.btn{
+   color: white; 
+   padding: 5px 15px;
+   font-size: 15px;
+   border: solid 3px #ffffff;
+   border-radius: 1.875rem;
+   height: 3.75rem;
+   padding: 0 3.4375rem;
+   font-size: 0.875rem;
+   background-color: transparent;
+   font-weight: 500;
+   text-transform: uppercase;
+   letter-spacing: 0.0625rem;
+   cursor: pointer;
+}
+
 header{
   position: absolute;
   width: 100%;
