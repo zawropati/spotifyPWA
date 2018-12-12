@@ -21,15 +21,17 @@ export default {
   data() {
     return {
       myMusicURL: "https://api.spotify.com/v1/me/top/tracks?limit=50",
-      myArtistsURL: "https://api.spotify.com/v1/me/top/artists?limit=50",
+      myArtistsURL: "https://api.spotify.com/v1/me/top/artists?limit=20",
       newPlaylistURL: "https://api.spotify.com/v1/me/playlists",
       myMusic: [],
-      myArtists: []
+      myArtists: [],
+      topArtistsIDs: []
     }
   },
   mounted() {
     this.getUsersTracks();
     this.getUserArtists();
+    this.getArtistsTopSongs();
   },
   methods: {
     getUsersTracks() {
@@ -46,13 +48,31 @@ export default {
         headers: { Authorization: "Bearer " + this.$root.token } 
       }).then(function(response) {
         that.myArtists = response.data.items;
+            that.myArtists.forEach(function(artist) {
+               that.topArtistsIDs.push(artist.id)
+         });
+         //console.log(that.topArtistsIDs);   
       });
     },
+    getArtistsTopSongs(){
+      var that = this;
+      setTimeout(function(){
+    console.log(that.topArtistsIDs.length);
+      for(var i = 0; i < that.topArtistsIDs.length; i++){
+        that.$http.get("https://api.spotify.com/v1/artists/" + that.topArtistsIDs[i] + "/top-tracks", {
+        headers: { Authorization: "Bearer " + that.$root.token }, 
+        params: {market: "DK"}
+        }).then(function(response) {
+        that.topSongs = response.data.items;  
+        console.log(that.topSongs[0]);
+      });
+    }}, 1000)},
     createPlaylist() {
       var that = this;
           console.log(this.$root.token)
-      this.$http.post('https://api.spotify.com/me/playlists', {
-        headers: { Authorization: this.$root.token },
+      that.$http.post('https://api.spotify.com/me/playlists', {
+        //cant pass the token, wtf ?
+        headers: { Authorization: that.$root.token },
         contentType: "application/json",
         data: JSON.stringify({name: "test", public: false}),
         json: true
