@@ -1,22 +1,25 @@
 <template>
   <div class='startcontainer'>
-                        <a class="open-modal" id="show-modal" @click="showModal = true">Open modal</a>
-      <div v-if="showModal" @close="showModal = false">
-                     <transition name="modal">
-                        <div class="modal-mask">
-                           <div class="modal-wrapper">
-                              <div class="box col-sm-3 modal-container">
-                                 <a class="close-modal" id="show-modal" @click.prevent="showModal = false"><i class="close-icon fa fa-times "></i></a>
-                                 <h2 class="subtitle">abc</h2>
-                                 <div class="panel-body">
-                                    <button class="custom-btn">a</button>
-                                    <button class="custom-btn reversed-btn" @click.prevent="showModal = false">c</button>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </transition>
-                  </div>
+    <a class="open-modal" id="show-modal" @click="showModal = true">Open modal</a>
+    <div v-if="showModal" @close="showModal = false">
+      <transition name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="box col-sm-3 modal-container">
+              <a class="close-modal" id="show-modal" @click.prevent="showModal = false"><i class="close-icon fa fa-times "></i></a>
+              <h3 class="subtitle">Save as WebApp</h3>
+              <h4 class="subtitle">Download as a WebApp now</h4>
+              <div class='modalmiddle'>
+                <p class='modalparagraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                <img class='mobile' src='../imgs/mobilephone.png'>
+              </div>
+              <span class='buttonwrapper'><button class='yesbutton'>Save Now</button></span>
+              <a class='cancelbutton'>Cancel</a>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
     <h1>
       Enjoy music with your friends
     </h1>
@@ -72,5 +75,60 @@ h2{
   line-height: 1.55;
   margin-top: 0;
   margin-bottom: 12px;
+}
+h3{
+  color: #4DC3CA;
+  font-size: 2em;
+  text-align: left;
+  margin: 0;
+}
+h4{
+  font-size: 1.5em;
+  color: white;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 25px;
+}
+.modalparagraph{
+  text-align: left;
+  color: white;
+  font-size: 4vw;
+  padding-right: 20px;
+}
+.modal-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  height: 70vh;
+  background-image: url('../imgs/modalbg.png');
+}
+.modalmiddle{
+  display: flex;
+  flex-direction: row;
+}
+.close-modal{
+  margin-right: -30px;
+  margin-top: -30px;
+}
+.yesbutton{
+  color: white;
+  padding: 5px 15px;
+  font-size: 1.2em;
+  border-radius: 1.875em;
+  height: 2.5em;
+  background-color: #E02F93;
+  cursor: pointer;
+  width: 10em;
+  border: none;
+}
+.buttonwrapper{
+  padding-top: 20px;
+}
+.cancelbutton{
+  padding-top: 10px;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
 }
 </style>
