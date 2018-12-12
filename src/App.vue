@@ -4,14 +4,19 @@
       <router-link to="/">
         <img class='logo' src='./imgs/Spotifytogetherlogo.png' alt='logo'>
       </router-link>
+      <User/>
     </header>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import User from '@/components/User'
 export default {
   name: 'app',
+  components:{
+    User,
+  },
   methods: {}
 }
 </script>
@@ -68,4 +73,67 @@ body, html{
 		background-position: 0% 50%
 	}
 }
+.box{
+  background-color: #3868B1;
+  border-radius: 1em;
+  height: 300px;
+  margin: 2em;
+}
+.modal-mask {
+	position: fixed;
+	z-index: 9998;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .5);
+	display: table;
+	transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+.modal-header h3 {
+	margin-top: 0;
+	color: #42b983;
+}
+
+.modal-body {
+	margin: 20px 0;
+}
+
+.modal-default-button {
+	float: right;
+}
+
+.modal-enter {
+	opacity: 0;
+}
+
+.modal-leave-active {
+	opacity: 0;
+}
+
+.open-modal {
+	transition: all .2s ease-in-out;
+}
+
+.open-modal:hover {
+	cursor: pointer;
+	background: #0a6332;
+	border-radius: 2vw;
+	color: #fff !important;
+	padding: 8px 20px;
+}
+
+.close-icon {
+	float: right;
+	color: #fff;
+  padding: 1em;
+}
+
 </style>

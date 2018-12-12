@@ -22,10 +22,10 @@ export default {
     return {
       myMusicURL: "https://api.spotify.com/v1/me/top/tracks?limit=50",
       myArtistsURL: "https://api.spotify.com/v1/me/top/artists?limit=50",
-      newPlaylistURL: "https://api.spotify.com/v1/users/me/playlists",
+      newPlaylistURL: "https://api.spotify.com/v1/me/playlists",
       myMusic: [],
       myArtists: []
-    };
+    }
   },
   mounted() {
     this.getUsersTracks();
@@ -43,16 +43,21 @@ export default {
     getUserArtists() {
       var that = this;
       this.$http.get(this.myArtistsURL, {
-        headers: { Authorization: "Bearer " + this.$root.token }
+        headers: { Authorization: "Bearer " + this.$root.token } 
       }).then(function(response) {
         that.myArtists = response.data.items;
       });
     },
     createPlaylist() {
       var that = this;
-      this.$http.post(this.myPlaylistURL, {
-        headers: { Authorization: "Bearer " + this.$root.token, ContentType: "application/json" }
+          console.log(this.$root.token)
+      this.$http.post('https://api.spotify.com/me/playlists', {
+        headers: { Authorization: this.$root.token },
+        contentType: "application/json",
+        data: JSON.stringify({name: "test", public: false}),
+        json: true
       }).then(function(response) {
+        debugger;
         that.myArtists = response.data.items;
       });
     }
