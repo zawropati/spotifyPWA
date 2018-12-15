@@ -46,9 +46,8 @@ body, html{
   padding: 0px;
   margin: 0px;
   height: 100%;
-  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-	background-size: 400% 400%;
-  animation: Gradient 15s ease infinite;
+  background-image: url("assets/Gradient_mesh_big.png");
+
 }
 #app {
   height: 100%;
