@@ -5,7 +5,7 @@
         <img class='logo' src='./imgs/Spotifytogetherlogo.png' alt='logo'>
       </router-link>
       <User/>
-      <Slide right :width='dynWidth'>
+    <Slide right :width='dynWidth'>
       <a id="home" href="#">
         <span>Home</span>
       </a>

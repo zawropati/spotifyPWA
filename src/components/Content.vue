@@ -1,6 +1,6 @@
 <template>
   <div class="myMusic">
-    <button class="btn" v-on:click="createPlaylist(); addtracks(); updateFrame();">Create</button>
+    <button class="btn" v-if='$root.playlistId != "" ' v-on:click="createPlaylist(); addtracks(); updateFrame();">Create</button>
     {{ $root.db }}
     <iframe
       :src="frameSrc"
