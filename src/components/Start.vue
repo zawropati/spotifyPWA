@@ -56,10 +56,8 @@ export default {
 			showModal: false
     }
   },
-  methods:{
-    showLateModal(){
-        setTimeout(this.showModal = true, 5000)
-    }
+  created () {
+    setTimeout(() => {this.showModal = true}, 2000)
   }
 }
 </script>
