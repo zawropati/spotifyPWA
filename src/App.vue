@@ -5,6 +5,11 @@
         <img class='logo' src='./imgs/Spotifytogetherlogo.png' alt='logo'>
       </router-link>
       <User/>
+      <Slide right>
+      <a id="home" href="#">
+        <span>Home</span>
+      </a>
+    </Slide>
     </header>
     <router-view></router-view>
   </div>
@@ -12,30 +17,50 @@
 
 <script>
 import User from '@/components/User'
+import { Slide } from 'vue-burger-menu'
 export default {
   name: 'app',
   components:{
     User,
+    Slide,
   },
   methods: {}
 }
 </script>
 
 <style>
+/* Burger menu styling start*/
+.bm-burger-button{
+  height: 20px;
+}
+.bm-burger-bars {
+  background-color: white;
+}
+.line-style {
+  height: 10%;
+}
+.bm-menu{
+  background-color: #212055;
+  /* width: 100vw !important; */
+}
+.bm-cross{
+  background: white;
+}
+/* Burger menu styling end*/
 .btn{
-   color: white; 
-   padding: 5px 15px;
-   font-size: 15px;
-   border: solid 3px #ffffff;
-   border-radius: 1.875rem;
-   height: 3.75rem;
-   padding: 0 3.4375rem;
-   font-size: 0.875rem;
-   background-color: transparent;
-   font-weight: 500;
-   text-transform: uppercase;
-   letter-spacing: 0.0625rem;
-   cursor: pointer;
+  color: white;
+  padding: 5px 15px;
+  font-size: 15px;
+  border: solid 3px #ffffff;
+  border-radius: 1.875rem;
+  height: 3.75rem;
+  padding: 0 3.4375rem;
+  font-size: 0.875rem;
+  background-color: transparent;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  cursor: pointer;
 }
 
 header{
@@ -54,12 +79,12 @@ body, html{
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color:white;
 }
 .logo {
   padding-left: 15px;
   padding-top: 15px;
-  height: 10vh;
+  height: 8vh;
 }
 @keyframes Gradient{
   0% {
