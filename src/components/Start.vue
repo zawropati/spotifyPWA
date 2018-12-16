@@ -1,6 +1,6 @@
 <template>
   <div class='startcontainer'>
-    <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 212">
+    <svg id="animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 212">
  
   <path id="t1" class="st0 secondpulse" d="M95.66 56.99h22.29v18.22H95.66v53.59c0 9.43 3.86 14.15 14.36 14.15 2.57 0 6.22-.43 7.93-.86v17.15c-1.71.64-6.86 1.93-13.72 1.93-17.58 0-28.73-10.72-28.73-29.37V75.21H55.79V56.99h5.57c11.15 0 15.86-6.86 15.86-15.86V24.4h18.44v32.59z"> </path>
   <path id="o" class="st0 secondpulse" d="M233.51 108.44c0 31.51-21.87 54.88-52.74 54.88s-52.74-23.37-52.74-54.88c0-31.3 21.87-54.67 52.74-54.67s52.74 23.37 52.74 54.67zm-20.58 0c0-23.8-15.01-36.66-32.16-36.66s-32.16 12.86-32.16 36.66c0 24.01 15.01 36.87 32.16 36.87s32.16-12.86 32.16-36.87z"/>
@@ -73,7 +73,7 @@ svg {
   height: auto;
 }
   .pulse{
-   animation-name: pulse_animation;
+    animation-name: pulse_animation;
     animation-duration: 1750ms;
     transform-origin:40% 40%;
     animation-iteration-count: infinite;
@@ -120,12 +120,15 @@ h1{
   line-height: 1;
   margin-top: 15px;
   margin-bottom: 25px;
+  padding-top: 30px;
 }
 h2{
   font-size: 0.75rem;
   line-height: 1.55;
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 60px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 h3{
   color: #4DC3CA;
