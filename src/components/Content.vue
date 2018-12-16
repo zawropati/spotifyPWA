@@ -1,6 +1,7 @@
 <template>
   <div class="myMusic"> 
-    <button class="btn" v-on:click="createPlaylist(); addtracks();">Create</button>
+    <button class="btn" v-on:click="createPlaylist(); addtracks(); updateFrame();">Create</button>
+    <iframe :src="frameSrc" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     <h2>Here we will have songs</h2>
     <div class="myTracks" v-for="artist in myArtists">
       Genres: <span class="myArtists" v-for="genre in artist.genres">{{ genre + ' '}}</span>      
@@ -21,7 +22,7 @@ export default {
   data() {
     return {
       myMusicURL: "https://api.spotify.com/v1/me/top/tracks?limit=50",
-      myArtistsURL: "https://api.spotify.com/v1/me/top/artists?limit=1",
+      myArtistsURL: "https://api.spotify.com/v1/me/top/artists?limit=10",
       newPlaylistURL: "https://api.spotify.com/v1/me/playlists",
       myMusic: [],
       myArtists: [],
@@ -29,7 +30,8 @@ export default {
       songsArray: [],
       songsArray2: [],
       uriArray: [],
-      playlistTopSongs: []
+      playlistTopSongs: [],
+      frameSrc: null
       }
   },
   mounted() {
@@ -70,46 +72,40 @@ export default {
         that.topSongs = response.data; 
              that.topSongs.tracks.forEach(function(songs){
                that.songsArray.push(songs)
-               //songs.append(this.songsArray2)
             })
-        //for(var a = 0; a < that.topSongs.length; a++){
-        //console.log(that.topSongs.tracks[a].uri);}
       });
-    }                     //  console.log(that.songsArray)
- //console.log(topSongs)
-     //that.topSongs.tracks.forEach(function(songs){
-       ///        that.songsArray.push(songs)
-          //  })
-            //      console.log(that.songsArray)
-
+      }                    
     }, 1000)},
     createPlaylist() {
       var that = this;             
-      that.$http.post('https://api.spotify.com/v1/me/playlists', {name: "Patka",
+      that.$http.post('https://api.spotify.com/v1/me/playlists', {name: "NotPatka",
         public: false},{
         //cant pass the token, wtf ?
         headers: { Authorization: "Bearer " + that.$root.token, "Content-Type": 'application/json'},
       }).then(function(response) {
         that.createdPlaylist = response.data;
-        console.log(that.createdPlaylist.id)
+        //console.log(that.createdPlaylist.id)
       });
     },
     addtracks(){
       var that = this;
       //console.log(that.songsArray)
+          that.uriArray = [];
           that.songsArray.forEach(function(topsong){
                 that.uriArray.push(topsong.uri)
     })
-    playlistTopSongs = [];
     var playlistTopSongs = that.uriArray;
-
-    console.log(playlistTopSongs);
+    //console.log(playlistTopSongs);
       that.$http.post('https://api.spotify.com/v1/playlists/' + that.createdPlaylist.id  + '/tracks', {uris: playlistTopSongs},{
         headers: { Authorization: "Bearer " + that.$root.token, "Content-Type": 'application/json'},
       }).then(function(response) {
         that.pushedTracks = response.data;
-        //console.log(that.createdPlaylist.id)
+        alert("Playlist created!")
+
       });
+    },
+    updateFrame(){
+      this.frameSrc = ('https://open.spotify.com/embed/user/1175743727/playlist/' + this.createdPlaylist.id)
     }
   }
 };
