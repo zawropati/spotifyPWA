@@ -1,6 +1,6 @@
 <template>
     <div class="myPic">
-        {{myInfo}}
+        {{ $root.userInfo.display_name }}
     </div>
 </template>
 
