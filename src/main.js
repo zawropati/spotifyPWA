@@ -52,6 +52,6 @@ new Vue({
     },
     updateDb (snapshot){
       this.db = snapshot.val()
-    }
+    },
   }
 })

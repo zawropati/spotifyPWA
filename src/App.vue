@@ -5,7 +5,7 @@
         <img class='logo' src='./imgs/Spotifytogetherlogo.png' alt='logo'>
       </router-link>
       <User/>
-      <Slide right>
+      <Slide right :width='dynWidth'>
       <a id="home" href="#">
         <span>Home</span>
       </a>
@@ -23,6 +23,11 @@ export default {
   components:{
     User,
     Slide,
+  },
+  computed: {
+    dynWidth () {
+      return window.innerWidth
+    }
   },
   methods: {}
 }
@@ -45,6 +50,15 @@ export default {
 }
 .bm-cross{
   background: white;
+  height: 40px !important;
+}
+.bm-cross-button {
+  height: 50px;
+  width: 50px;
+}
+.cross-style{
+  right: 10px;
+  top: 28px;
 }
 /* Burger menu styling end*/
 .btn{
