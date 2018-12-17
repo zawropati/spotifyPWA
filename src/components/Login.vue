@@ -1,5 +1,5 @@
 <template>
-  <button class="loginbutton" @click.prevent="getSpotifyUser">
+  <button class="loginButton" @click.prevent="getSpotifyUser">
     Login
   </button>
 </template>
