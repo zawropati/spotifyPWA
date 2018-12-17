@@ -4,7 +4,6 @@
       <router-link to="/">
         <img class='logo' src='./imgs/Spotifytogetherlogo.png' alt='logo'>
       </router-link>
-      <!-- <User/> -->
     <Slide right :width='dynWidth'>
       <a id="home" href="#">
         <span>Home</span>
@@ -16,12 +15,10 @@
 </template>
 
 <script>
-// import User from '@/components/User'
 import { Slide } from 'vue-burger-menu'
 export default {
   name: 'app',
   components:{
-    // User,
     Slide,
   },
   computed: {
@@ -46,7 +43,6 @@ export default {
 }
 .bm-menu{
   background-color: #212055;
-  /* width: 100vw !important; */
 }
 .bm-cross{
   background: white;
@@ -61,7 +57,7 @@ export default {
   top: 28px;
 }
 /* Burger menu styling end*/
-.btn{
+.loginButton{
   color: white;
   padding: 5px 15px;
   font-size: 15px;
@@ -76,7 +72,6 @@ export default {
   letter-spacing: 0.0625rem;
   cursor: pointer;
 }
-
 header{
   position: absolute;
   width: 100%;
@@ -86,7 +81,6 @@ body, html{
   margin: 0px;
   height: 100%;
   background-image: url("assets/Gradient_mesh_big.png");
-
 }
 #app {
   height: 100%;
@@ -174,5 +168,4 @@ body, html{
   transform: translateX(10px);
   opacity: 0;
 }
-
 </style>

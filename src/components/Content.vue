@@ -1,6 +1,9 @@
 <template>
   <div class="myMusic">
-    <button class="btn" @click.prevent="showModal = true" >Create</button>
+    <h2 class='contentParagraph'>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </h2>
+    <button class="loginButton" @click.prevent="showModal = true" >Create Playlist</button>
     <!-- {{ $root.db }} -->
     <div @close="showModal = false">
         <transition name="modal">
@@ -129,7 +132,7 @@ export default {
       that.$http
         .post(
           "https://api.spotify.com/v1/me/playlists",
-          { name: "NotPatka", public: false },
+          { name: "Spotify.Together", public: false },
           {
             //cant pass the token, wtf ?
             headers: {
@@ -184,7 +187,13 @@ export default {
   border: white solid 1px;
 }
 .myMusic {
-  padding-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 0 20px;
 }
 .modal-container{
   display: flex;
@@ -240,15 +249,11 @@ h4{
 .key{
   text-align: center;
 }
-.modal-fade-enter-active {
-  transition: all .3s ease;
-}
-.modal-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.modal-fade-enter, .modal-fade-leave-to
-/* .modal-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
+.contentParagraph{
+  padding-bottom: 60px;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 0.75rem;
+  line-height: 1.55;
 }
 </style>
