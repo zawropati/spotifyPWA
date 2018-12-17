@@ -2,11 +2,10 @@
   <div class="myMusic">
     <h2>
       So the beer is in the fridge, dancing shoes are on and you are about to start yet another unforgettable night with your friends?
-      </br></br>
+      <br/><br/>
       We help you creating a playlist based on your mutual taste only in a few seconds!
     </h2>
     <button class="loginButton" @click.prevent="showModal = true" >Create Playlist</button>
-    <!-- {{ $root.db }} -->
     <div @close="showModal = false">
         <transition name="modal">
           <div class="modal-mask"  v-if="showModal">
@@ -20,7 +19,7 @@
                   <li>Come back to this app and see your Playlist</li>
                 </ol>
                 <h3 class='key'>demo</h3>
-                <span class='buttonwrapper'><button class='createPlaylistButton' v-if='$root.playlistId != "" ' v-on:click="createPlaylist">Create Playlist</button></span>
+                <span class='buttonwrapper'><button class='loginButton createPlaylistButton' v-if='$root.playlistId != "" ' v-on:click="createPlaylist">Create Playlist</button></span>
                 <a class='cancelbutton' @click.prevent="showModal = false">Cancel</a>
               </div>
             </div>
@@ -52,22 +51,20 @@ export default {
   },
   mounted() {
     this.getUserInfo();
-    // this.getUsersTracks();
     this.getUserArtists();
-    // this.getArtistsTopSongs();
     this.$root.$on('db-updated', this.compare);
   },
   methods: {
-    getUsersTracks() {
-      var that = this;
-      this.$http
-        .get(this.myMusicURL, {
-          headers: { Authorization: "Bearer " + this.$root.token }
-        })
-        .then(function(response) {
-          that.myMusic = response.data.items;
-        });
-    },
+    // getUsersTracks() {
+    //   var that = this;
+    //   this.$http
+    //     .get(this.myMusicURL, {
+    //       headers: { Authorization: "Bearer " + this.$root.token }
+    //     })
+    //     .then(function(response) {
+    //       that.myMusic = response.data.items;
+    //     });
+    // },
     getUserInfo() {
       var that = this;
       this.$http
@@ -88,7 +85,7 @@ export default {
           that.myArtists = response.data.items;
           that.myArtists.forEach(function(artist) {
             that.topArtistsIDs.push(artist.id);
-          });
+            });
           this.$root.setArtists(that.topArtistsIDs);
         });
     },
@@ -98,30 +95,27 @@ export default {
       let arr1 = this.$root.db[ids[0]]
       let arr2 = this.$root.db[ids[1]]
       arr1.forEach((e1)=>arr2.forEach((e2)=>
-        {if(e1===e2){
+        {if (e1===e2) {
           finalarray.push(e1)
         }}
       ));
-      console.log(finalarray);
-      // return finalarray;
+      console.log({finalarray:finalarray});
       this.getArtistsTopSongs(finalarray)
     },
     getArtistsTopSongs(artists) {
       var that = this;
-      //console.log(that.topArtistsIDs.length);
       for (var i = 0; i < artists.length; i++) {
         that.$http
           .get(
             "https://api.spotify.com/v1/artists/" +
-              artists[i] +
-              "/top-tracks",
+            artists[i] +
+            "/top-tracks",
             {
               headers: { Authorization: "Bearer " + that.$root.token },
               params: { market: "DK" }
             }
           )
           .then(function(response) {
-            // that.topSongs = response.data;
             response.data.tracks.forEach(function(songs) {
               that.songsArray.push(songs);
               console.log({songs:songs})
@@ -136,7 +130,6 @@ export default {
           "https://api.spotify.com/v1/me/playlists",
           { name: "Spotify.Together", public: false },
           {
-            //cant pass the token, wtf ?
             headers: {
               Authorization: "Bearer " + that.$root.token,
               "Content-Type": "application/json"
@@ -145,24 +138,22 @@ export default {
         )
         .then(function(response) {
           that.createdPlaylist = response.data;
-          console.log(that.createdPlaylist.id)
+          console.log({playlistid: that.createdPlaylist.id})
           that.addtracks()
         });
     },
     addtracks() {
       var that = this;
-      //console.log(that.songsArray)
       that.uriArray = [];
       that.songsArray.forEach(function(topsong) {
         that.uriArray.push(topsong.uri);
       });
       var playlistTopSongs = that.uriArray;
-      //console.log(playlistTopSongs);
       that.$http
         .post(
           "https://api.spotify.com/v1/playlists/" +
-            that.createdPlaylist.id +
-            "/tracks",
+          that.createdPlaylist.id +
+          "/tracks",
           { uris: playlistTopSongs },
           {
             headers: {
@@ -201,31 +192,26 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
   padding: 40px;
   height: 70vh;
   background-color: #76C5CA;
 }
 .close-modal{
-  margin-right: -30px;
-  margin-top: -30px;
+  position:absolute;
+  right: 0;
+  top: 0;
 }
 .createPlaylistButton{
   color: #1F1A4E;
-  padding: 5px 15px;
-  font-size: 1.2em;
-  border-radius: 1.875em;
-  height: 2.5em;
   background-color: #FFFFFF;
-  cursor: pointer;
-  width: 10em;
-  border: none;
 }
 .buttonwrapper{
   padding-top: 20px;
   text-align: center;
 }
 .cancelbutton{
-  padding-top: 10px;
+  padding-top: 20px;
   color: white;
   font-size: 1.2em;
   cursor: pointer;
@@ -233,12 +219,11 @@ export default {
 }
 h1{
   text-transform: uppercase;
-
 }
 h3{
   color: #1F1A4E;
   font-size: 2em;
-  text-align: left;
+  text-align: center;
   margin: 0;
 }
 h4{
@@ -250,6 +235,7 @@ h4{
 }
 .key{
   text-align: center;
+  padding-top: 20px;
 }
 h2{
   font-size: 1rem;
@@ -258,5 +244,9 @@ h2{
   margin-bottom: 60px;
   padding-left: 25px;
   padding-right: 25px;
+}
+ol{
+  text-align: left;
+  font-size: 5vw;
 }
 </style>
