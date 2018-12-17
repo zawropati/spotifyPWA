@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Start from '@/components/Start'
 import Content from '@/components/Content'
 import Login from '@/components/Login'
+import CreatedPlaylist from '@/components/CreatedPlaylist'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       name: 'Login',
       component: Login,
       props: {color: 'red'}
+    },
+    {
+      path: '/playlist',
+      name: 'CreatedPlaylist',
+      component: CreatedPlaylist
     }
   ]
 })

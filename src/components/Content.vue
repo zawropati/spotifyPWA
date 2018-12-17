@@ -177,6 +177,7 @@ export default {
       this.frameSrc =
         "https://open.spotify.com/embed/user/1175743727/playlist/" +
         this.createdPlaylist.id;
+        this.$router.push('/playlist');
     },
    
   }

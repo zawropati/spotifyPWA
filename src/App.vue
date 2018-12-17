@@ -4,7 +4,7 @@
       <router-link to="/">
         <img class='logo' src='./imgs/Spotifytogetherlogo.png' alt='logo'>
       </router-link>
-      <User/>
+      <!-- <User/> -->
     <Slide right :width='dynWidth'>
       <a id="home" href="#">
         <span>Home</span>
@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import User from '@/components/User'
+// import User from '@/components/User'
 import { Slide } from 'vue-burger-menu'
 export default {
   name: 'app',
   components:{
-    User,
+    // User,
     Slide,
   },
   computed: {
