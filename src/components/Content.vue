@@ -1,7 +1,9 @@
 <template>
   <div class="myMusic">
-    <h2 class='contentParagraph'>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <h2>
+      So the beer is in the fridge, dancing shoes are on and you are about to start yet another unforgettable night with your friends?
+      </br></br>
+      We help you creating a playlist based on your mutual taste only in a few seconds!
     </h2>
     <button class="loginButton" @click.prevent="showModal = true" >Create Playlist</button>
     <!-- {{ $root.db }} -->
@@ -249,11 +251,12 @@ h4{
 .key{
   text-align: center;
 }
-.contentParagraph{
-  padding-bottom: 60px;
+h2{
+  font-size: 1rem;
+  line-height: 1.55;
+  margin-top: 0;
+  margin-bottom: 60px;
   padding-left: 25px;
   padding-right: 25px;
-  font-size: 0.75rem;
-  line-height: 1.55;
 }
 </style>
