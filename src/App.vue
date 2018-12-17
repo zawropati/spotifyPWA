@@ -128,38 +128,29 @@ body, html{
 	display: table;
 	transition: opacity .3s ease;
 }
-
 .modal-wrapper {
 	display: table-cell;
 	vertical-align: middle;
 }
-
-
 .modal-header h3 {
 	margin-top: 0;
 	color: #42b983;
 }
-
 .modal-body {
 	margin: 20px 0;
 }
-
 .modal-default-button {
 	float: right;
 }
-
 .modal-enter {
 	opacity: 0;
 }
-
 .modal-leave-active {
 	opacity: 0;
 }
-
 .open-modal {
 	transition: all .2s ease-in-out;
 }
-
 .open-modal:hover {
 	cursor: pointer;
 	background: #0a6332;
@@ -167,11 +158,21 @@ body, html{
 	color: #fff !important;
 	padding: 8px 20px;
 }
-
 .close-icon {
 	float: right;
 	color: #fff;
   padding: 1em;
+}
+.modal-fade-enter-active {
+  transition: all .3s ease;
+}
+.modal-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.modal-fade-enter, .modal-fade-leave-to
+/* .modal-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
 }
 
 </style>
