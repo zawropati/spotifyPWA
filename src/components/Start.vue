@@ -1,7 +1,6 @@
 <template>
   <div class='startcontainer'>
-    <svg id="animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 212">
- 
+    <!-- <svg id="animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 212"> -->
   <path id="t1" class="st0 secondpulse" d="M95.66 56.99h22.29v18.22H95.66v53.59c0 9.43 3.86 14.15 14.36 14.15 2.57 0 6.22-.43 7.93-.86v17.15c-1.71.64-6.86 1.93-13.72 1.93-17.58 0-28.73-10.72-28.73-29.37V75.21H55.79V56.99h5.57c11.15 0 15.86-6.86 15.86-15.86V24.4h18.44v32.59z"> </path>
   <path id="o" class="st0 secondpulse" d="M233.51 108.44c0 31.51-21.87 54.88-52.74 54.88s-52.74-23.37-52.74-54.88c0-31.3 21.87-54.67 52.74-54.67s52.74 23.37 52.74 54.67zm-20.58 0c0-23.8-15.01-36.66-32.16-36.66s-32.16 12.86-32.16 36.66c0 24.01 15.01 36.87 32.16 36.87s32.16-12.86 32.16-36.87z"/>
   <path id="g" class="st0 pulse" d="M268.46 159.03c1.93 11.58 11.15 19.94 24.65 19.94 18.01 0 28.08-9 28.08-29.37v-7.72c-4.29 6.86-14.15 13.51-29.37 13.51-28.08 0-49.09-21.65-49.09-51.24 0-27.87 20.15-51.45 49.09-51.45 16.72 0 26.37 7.29 30.01 14.36V54.63h27.44v94.11c0 28.94-15.65 55.31-55.31 55.31-28.94 0-48.23-18.01-51.24-38.16l25.74-6.86zm53.16-54.88c0-16.29-11.15-26.58-24.87-26.58-14.15 0-25.3 10.29-25.3 26.58 0 16.51 10.5 26.8 25.3 26.8 14.58 0 24.87-10.51 24.87-26.8z"></path>
@@ -11,7 +10,6 @@
   <path id="e2" class="st0 secondpulse" d="M760.67 130.73c-5.79 18.22-22.29 32.58-46.3 32.58-27.65 0-51.88-20.15-51.88-55.09 0-32.37 23.37-54.45 49.31-54.45 31.73 0 49.52 21.87 49.52 54.02 0 2.57-.21 5.15-.43 6.43h-77.6c.43 18.44 13.72 31.3 31.08 31.3 16.72 0 25.08-9.22 28.94-20.79l17.36 6zm-20.37-32.8c-.43-14.79-10.08-26.37-28.3-26.37-16.94 0-27.23 13.08-28.08 26.37h56.38z"/>
   <path id="r" class="st0 secondpulse" d="M837.2 77.35c-3-.43-6-.64-8.79-.64-16.94 0-28.3 9-28.3 31.73v51.66h-20.15V56.99h19.72V75c7.5-15.86 20.37-19.72 30.87-19.72 2.79 0 5.57.43 6.65.64v21.43z"/>
 </svg>
-    <a class="open-modal" id="show-modal" @click="showModal = true">Open modal</a>
     <div v-if="showModal" @close="showModal = false">
       <transition name="modal">
         <div class="modal-mask">
@@ -25,7 +23,7 @@
                 <img class='mobile' src='../imgs/mobilephone.png'>
               </div>
               <span class='buttonwrapper'><button class='yesbutton'>Save Now</button></span>
-              <a class='cancelbutton'>Cancel</a>
+              <a class='cancelbutton' @click.prevent="showModal = false">Cancel</a>
             </div>
           </div>
         </div>
@@ -56,10 +54,8 @@ export default {
 			showModal: false
     }
   },
-  methods:{
-    showLateModal(){
-        setTimeout(this.showModal = true, 5000)
-    }
+  created () {
+    setTimeout(() => {this.showModal = true}, 5000)
   }
 }
 </script>
@@ -97,7 +93,7 @@ svg {
     100% { transform: scale(1);}
 }
 @keyframes secondpulse_animation {
-    0% { transform: scale(1); opacity: 1;} 
+    0% { transform: scale(1); opacity: 1;}
     30% { transform: scale(1); opacity: 1;}
     40% { transform: scale(1); opacity: -1;}
     50% { transform: scale(1); opacity: -1;}
