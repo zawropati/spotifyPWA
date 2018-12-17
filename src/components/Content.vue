@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       myMusicURL: "https://api.spotify.com/v1/me/top/tracks?limit=50",
-      myArtistsURL: "https://api.spotify.com/v1/me/top/artists?limit=10",
+      myArtistsURL: "https://api.spotify.com/v1/me/top/artists?limit=30",
       myInfoURL: "https://api.spotify.com/v1/me",
       newPlaylistURL: "https://api.spotify.com/v1/me/playlists",
       myMusic: [],
