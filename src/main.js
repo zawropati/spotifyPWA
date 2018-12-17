@@ -48,11 +48,13 @@ new Vue({
   },
   methods: {
     setArtists (artists) {
+      if(typeof this.playlistId !== 'undefined' && typeof this.userInfo.id !== 'undefined'){
       //this is where we set the data - artists by user ID
-      firebase.database().ref(this.playlistId + '/' + this.userInfo.id ).set(artists);
+      firebase.database().ref(this.playlistId + '/' + this.userInfo.id ).set(artists);}
     },
     updateDb (snapshot){
       this.db = snapshot.val()
+      this.$emit('db-updated')
     },
   }
 })

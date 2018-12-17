@@ -1,6 +1,6 @@
 <template>
   <div class="myMusic">
-    <button class="btn" v-if='$root.playlistId != "" ' v-on:click="createPlaylist(); addtracks(); updateFrame();">Create</button>
+    <button class="btn" v-if='$root.playlistId != "" ' v-on:click="createPlaylist">Create</button>
     {{ $root.db }}
     <iframe
       :src="frameSrc"
@@ -42,14 +42,16 @@ export default {
       songsArray2: [],
       uriArray: [],
       playlistTopSongs: [],
-      frameSrc: null
+      frameSrc: null,
+      finalarray: [],
     };
   },
   mounted() {
-    this.getUsersTracks();
-    this.getUserArtists();
-    this.getArtistsTopSongs();
     this.getUserInfo();
+    // this.getUsersTracks();
+    this.getUserArtists();
+    // this.getArtistsTopSongs();
+    this.$root.$on('db-updated', this.compare);
   },
   methods: {
     getUsersTracks() {
@@ -86,29 +88,42 @@ export default {
           this.$root.setArtists(that.topArtistsIDs);
         });
     },
-    getArtistsTopSongs() {
+    compare(){
+      const finalarray =[];
+      const ids = Object.keys(this.$root.db)
+      let arr1 = this.$root.db[ids[0]]
+      let arr2 = this.$root.db[ids[1]]
+      arr1.forEach((e1)=>arr2.forEach((e2)=>
+        {if(e1===e2){
+          finalarray.push(e1)
+        }}
+      ));
+      console.log(finalarray);
+      // return finalarray;
+      this.getArtistsTopSongs(finalarray)
+    },
+    getArtistsTopSongs(artists) {
       var that = this;
-      setTimeout(function() {
-        //console.log(that.topArtistsIDs.length);
-        for (var i = 0; i < that.topArtistsIDs.length; i++) {
-          that.$http
-            .get(
-              "https://api.spotify.com/v1/artists/" +
-                that.topArtistsIDs[i] +
-                "/top-tracks",
-              {
-                headers: { Authorization: "Bearer " + that.$root.token },
-                params: { market: "DK" }
-              }
-            )
-            .then(function(response) {
-              that.topSongs = response.data;
-              that.topSongs.tracks.forEach(function(songs) {
-                that.songsArray.push(songs);
-              });
+      //console.log(that.topArtistsIDs.length);
+      for (var i = 0; i < artists.length; i++) {
+        that.$http
+          .get(
+            "https://api.spotify.com/v1/artists/" +
+              artists[i] +
+              "/top-tracks",
+            {
+              headers: { Authorization: "Bearer " + that.$root.token },
+              params: { market: "DK" }
+            }
+          )
+          .then(function(response) {
+            // that.topSongs = response.data;
+            response.data.tracks.forEach(function(songs) {
+              that.songsArray.push(songs);
+              console.log({songs:songs})
             });
-        }
-      }, 1000);
+          });
+      }
     },
     createPlaylist() {
       var that = this;
@@ -126,7 +141,8 @@ export default {
         )
         .then(function(response) {
           that.createdPlaylist = response.data;
-          //console.log(that.createdPlaylist.id)
+          console.log(that.createdPlaylist.id)
+          that.addtracks()
         });
     },
     addtracks() {
@@ -154,13 +170,15 @@ export default {
         .then(function(response) {
           that.pushedTracks = response.data;
           alert("Playlist created!");
+          that.updateFrame()
         });
     },
     updateFrame() {
       this.frameSrc =
         "https://open.spotify.com/embed/user/1175743727/playlist/" +
         this.createdPlaylist.id;
-    }
+    },
+   
   }
 };
 </script>

@@ -93,7 +93,7 @@ svg {
     100% { transform: scale(1);}
 }
 @keyframes secondpulse_animation {
-    0% { transform: scale(1); opacity: 1;} 
+    0% { transform: scale(1); opacity: 1;}
     30% { transform: scale(1); opacity: 1;}
     40% { transform: scale(1); opacity: -1;}
     50% { transform: scale(1); opacity: -1;}
