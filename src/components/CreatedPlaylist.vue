@@ -6,26 +6,16 @@
           {{ $root.userInfo.display_name }}
           <img :src = '$root.userInfo.images[0].url'>
       </div>
-      <div v-if="showModal" @close="showModal = false">
-        <transition name="modal">
-          <div class="modal-mask">
-            <div class="modal-wrapper">
-              <div class="box col-sm-3 modal-container">
-                <a class="close-modal" id="show-modal" @click.prevent="showModal = false"><i class="close-icon fa fa-times "></i></a>
-                <h3 class="subtitle">Share this key</h3>
-                <ol>
-                  <li>Copy the key and share it with your friends</li>
-                  <li>Wait for them to accept</li>
-                  <li>Come back to this app and see your Playlist</li>
-                </ol>
-                <h3 class='key'>demo</h3>
-                <span class='buttonwrapper'><button class='createPlaylistButton'>Create Playlist</button></span>
-                <a class='cancelbutton' @click.prevent="showModal = false">Cancel</a>
-              </div>
-            </div>
-          </div>
-        </transition>
-      </div>
+      <iframe
+        v-if="$route.query.id"
+        :src="`https://open.spotify.com/embed/user/1175743727/playlist/${ $route.query.id }`"
+        width="300"
+        height="380"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      >
+      </iframe>
   </div>
 </template>
 
@@ -35,11 +25,9 @@ export default {
     data() {
     return {
       myInfo: {},
-    },
-    {showModal: false}
+    }
   },
   created () {
-    setTimeout(() => {this.showModal = true}, 1000)
   },
   mounted(){
     this.getUserInfo();
@@ -73,7 +61,7 @@ export default {
     color: white;
     font-size: 25px;
 }
-.modal-container{
+/* .modal-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -106,7 +94,7 @@ export default {
   font-size: 1.2em;
   cursor: pointer;
   text-align: center;
-}
+} */
 h1{
   text-transform: uppercase;
 
