@@ -1,6 +1,11 @@
 <template>
   <div class="myMusic">
-    <button class="btn" @click.prevent="showModal = true" >Create</button>
+    <h2>
+      So the beer is in the fridge, dancing shoes are on and you are about to start yet another unforgettable night with your friends?
+      </br></br>
+      We help you creating a playlist based on your mutual taste only in a few seconds!
+    </h2>
+    <button class="loginButton" @click.prevent="showModal = true" >Create Playlist</button>
     <!-- {{ $root.db }} -->
     <div @close="showModal = false">
         <transition name="modal">
@@ -129,7 +134,7 @@ export default {
       that.$http
         .post(
           "https://api.spotify.com/v1/me/playlists",
-          { name: "NotPatka", public: false },
+          { name: "Spotify.Together", public: false },
           {
             //cant pass the token, wtf ?
             headers: {
@@ -184,7 +189,13 @@ export default {
   border: white solid 1px;
 }
 .myMusic {
-  padding-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 0 20px;
 }
 .modal-container{
   display: flex;
@@ -240,15 +251,12 @@ h4{
 .key{
   text-align: center;
 }
-.modal-fade-enter-active {
-  transition: all .3s ease;
-}
-.modal-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.modal-fade-enter, .modal-fade-leave-to
-/* .modal-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
+h2{
+  font-size: 1rem;
+  line-height: 1.55;
+  margin-top: 0;
+  margin-bottom: 60px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 </style>

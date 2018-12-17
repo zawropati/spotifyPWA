@@ -4,7 +4,6 @@
       <router-link to="/">
         <img class='logo' src='./imgs/Spotifytogetherlogo.png' alt='logo'>
       </router-link>
-      <!-- <User/> -->
     <Slide right :width='dynWidth'>
       <a id="home" href="#">
         <span>Home</span>
@@ -16,12 +15,10 @@
 </template>
 
 <script>
-// import User from '@/components/User'
 import { Slide } from 'vue-burger-menu'
 export default {
   name: 'app',
   components:{
-    // User,
     Slide,
   },
   computed: {
@@ -46,7 +43,6 @@ export default {
 }
 .bm-menu{
   background-color: #212055;
-  /* width: 100vw !important; */
 }
 .bm-cross{
   background: white;
@@ -61,7 +57,7 @@ export default {
   top: 28px;
 }
 /* Burger menu styling end*/
-.btn{
+.loginButton{
   color: white;
   padding: 5px 15px;
   font-size: 15px;
@@ -76,7 +72,6 @@ export default {
   letter-spacing: 0.0625rem;
   cursor: pointer;
 }
-
 header{
   position: absolute;
   width: 100%;
@@ -86,7 +81,6 @@ body, html{
   margin: 0px;
   height: 100%;
   background-image: url("assets/Gradient_mesh_big.png");
-
 }
 #app {
   height: 100%;
@@ -128,38 +122,29 @@ body, html{
 	display: table;
 	transition: opacity .3s ease;
 }
-
 .modal-wrapper {
 	display: table-cell;
 	vertical-align: middle;
 }
-
-
 .modal-header h3 {
 	margin-top: 0;
 	color: #42b983;
 }
-
 .modal-body {
 	margin: 20px 0;
 }
-
 .modal-default-button {
 	float: right;
 }
-
 .modal-enter {
 	opacity: 0;
 }
-
 .modal-leave-active {
 	opacity: 0;
 }
-
 .open-modal {
 	transition: all .2s ease-in-out;
 }
-
 .open-modal:hover {
 	cursor: pointer;
 	background: #0a6332;
@@ -167,11 +152,20 @@ body, html{
 	color: #fff !important;
 	padding: 8px 20px;
 }
-
 .close-icon {
 	float: right;
 	color: #fff;
   padding: 1em;
 }
-
+.modal-fade-enter-active {
+  transition: all .3s ease;
+}
+.modal-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.modal-fade-enter, .modal-fade-leave-to
+/* .modal-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
 </style>
