@@ -11,19 +11,26 @@
       <path id="e2" class="st0 secondpulse" d="M760.67 130.73c-5.79 18.22-22.29 32.58-46.3 32.58-27.65 0-51.88-20.15-51.88-55.09 0-32.37 23.37-54.45 49.31-54.45 31.73 0 49.52 21.87 49.52 54.02 0 2.57-.21 5.15-.43 6.43h-77.6c.43 18.44 13.72 31.3 31.08 31.3 16.72 0 25.08-9.22 28.94-20.79l17.36 6zm-20.37-32.8c-.43-14.79-10.08-26.37-28.3-26.37-16.94 0-27.23 13.08-28.08 26.37h56.38z"/>
       <path id="r" class="st0 secondpulse" d="M837.2 77.35c-3-.43-6-.64-8.79-.64-16.94 0-28.3 9-28.3 31.73v51.66h-20.15V56.99h19.72V75c7.5-15.86 20.37-19.72 30.87-19.72 2.79 0 5.57.43 6.65.64v21.43z"/>
     </svg> -->
-    <div v-if="showModal" @close="showModal = false">
+    <div @close="showModal = false">
       <transition name="modal">
-        <div class="modal-mask">
+        <div class="modal-mask" v-if="showModal">
           <div class="modal-wrapper">
             <div class="box col-sm-3 modal-container">
               <a class="close-modal" id="show-modal" @click.prevent="showModal = false"><i class="close-icon fa fa-times "></i></a>
-              <h3 class="subtitle">Save as WebApp</h3>
-              <h4 class="subtitle">Download as a WebApp now</h4>
+              <h3>Save as Web App</h3>
+              <h4>A Progressive Web App offers a website’s lightweight version while looking like any traditional native app</h4>
               <div class='modalmiddle'>
-                <p class='modalparagraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                <img class='mobile' src='../imgs/mobilephone.png'>
+                <p class='modalparagraph'>
+                  <ol class='homescreenSteps'>
+                    <li>Tap the Share button in Safari or tap the Chrome 3 dots menu</li>
+                    <li>Click on Add To Homescreen</li>
+                    <li>Tap Add to complete the process</li>
+                    <li>Now launch the PWA from your Home screen by tapping its icon</li>
+                  </ol>
+                </p>
+                <div><img class='mobileimg' src='../imgs/mobilephone.png'></div>
               </div>
-              <span class='buttonwrapper'><button class='yesbutton'>Save Now</button></span>
+              <!-- <span class='buttonwrapper'><button class='yesbutton'>Save Now</button></span> -->
               <a class='cancelbutton' @click.prevent="showModal = false">Cancel</a>
             </div>
           </div>
@@ -36,7 +43,7 @@
     <h2>
       Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.
     </h2>
-    <Login color='orange' v-if="!$root.token"/>
+    <Login v-if="!$root.token"/>
   </div>
 </template>
 
@@ -129,21 +136,21 @@ h2{
 }
 h3{
   color: #4DC3CA;
-  font-size: 2em;
+  font-size: 8vw;
   text-align: left;
   margin: 0;
 }
 h4{
-  font-size: 1.5em;
+  font-size: 4vw;
   color: white;
   text-align: left;
   margin: 0;
-  margin-bottom: 25px;
+  margin-top: 10px;
 }
 .modalparagraph{
   text-align: left;
   color: white;
-  font-size: 4vw;
+  font-size: 3.5vw;
   padding-right: 20px;
 }
 .modal-container{
@@ -177,9 +184,17 @@ h4{
   padding-top: 20px;
 }
 .cancelbutton{
-  padding-top: 10px;
+  padding-top: 20px;
   color: white;
   font-size: 1.2em;
   cursor: pointer;
+  font-weight: bold;
+}
+.homescreenSteps{
+  padding-left: 10px;
+}
+.mobileimg{
+  width: 100%;
+  margin-top: 80px;
 }
 </style>
