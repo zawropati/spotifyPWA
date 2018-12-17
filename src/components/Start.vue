@@ -18,7 +18,7 @@
             <div class="box col-sm-3 modal-container">
               <a class="close-modal" id="show-modal" @click.prevent="showModal = false"><i class="close-icon fa fa-times "></i></a>
               <h3>Save as Web App</h3>
-              <h4>A Progressive Web App offers a website’s lightweight version while looking like any traditional native app</h4>
+              <h4>Progressive Web App offers a website’s lightweight version while looking like any traditional native app</h4>
               <div class='modalmiddle'>
                 <p class='modalparagraph'>
                   <ol class='homescreenSteps'>
@@ -41,7 +41,7 @@
       Enjoy music with your friends
     </h1>
     <h2>
-      Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.Or not.
+      Having troubles figuring out what to play at your get-together? </br> </br>Create a playlist now with other Spotify users based on your mutual taste in music.
     </h2>
     <Login v-if="!$root.token"/>
   </div>
@@ -127,7 +127,7 @@ h1{
   padding-top: 30px;
 }
 h2{
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 1.55;
   margin-top: 0;
   margin-bottom: 60px;
@@ -152,6 +152,7 @@ h4{
   color: white;
   font-size: 3.5vw;
   padding-right: 20px;
+  margin-top: 0;
 }
 .modal-container{
   display: flex;
@@ -193,8 +194,14 @@ h4{
 .homescreenSteps{
   padding-left: 10px;
 }
+.homescreenSteps > li:before{
+  font-weight: bold;
+}
 .mobileimg{
   width: 100%;
   margin-top: 80px;
+}
+Login{
+  padding-top: 60px;
 }
 </style>
