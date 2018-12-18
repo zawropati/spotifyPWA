@@ -162,6 +162,7 @@ h4{
   padding: 40px;
   height: 70vh;
   background-image: url('../imgs/modalbg.png');
+  background-position: center;
 }
 .modalmiddle{
   display: flex;
