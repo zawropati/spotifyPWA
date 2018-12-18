@@ -41,7 +41,7 @@
       Enjoy music with your friends
     </h1>
     <h2>
-      Having troubles figuring out what to play at your get-together? </br> </br>Create a playlist now with other Spotify users based on your mutual taste in music.
+      Having troubles figuring out what to play at your get-together? <br/> <br/> Create a playlist now with other Spotify users based on your mutual taste in music.
     </h2>
     <Login v-if="!$root.token"/>
   </div>
@@ -158,6 +158,7 @@ h4{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
   padding: 40px;
   height: 70vh;
   background-image: url('../imgs/modalbg.png');
@@ -167,8 +168,9 @@ h4{
   flex-direction: row;
 }
 .close-modal{
-  margin-right: -30px;
-  margin-top: -30px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 .yesbutton{
   color: white;
