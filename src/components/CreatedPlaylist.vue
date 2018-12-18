@@ -77,7 +77,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .playlist{
   display: flex;
   flex-direction: column;
@@ -93,7 +93,7 @@ h1{
 }
 h3{
   font-size: 4vw;
-  padding-left: 50px;
+  padding-left: 20px;
 }
 hr{
   display: block;

@@ -1,12 +1,18 @@
 <template>
-  <div id="app">
+  <div id="app" :class='$route.name'>
     <header>
       <router-link to="/">
         <img class='logo' src='./imgs/Spotifytogetherlogo.png' alt='logo'>
       </router-link>
-    <Slide right :width='dynWidth'>
-      <a id="home" href="#">
-        <span>Home</span>
+    <Slide v-if='$route.name != "CreatedPlaylist" ' right :width='dynWidth'>
+      <a id="about" href="#">
+        <span>About</span>
+      </a>
+      <a id="contact" href="#">
+        <span>Contact</span>
+      </a>
+      <a id="whyWebApp" href="#">
+        <span>Why Web App</span>
       </a>
     </Slide>
     </header>
@@ -52,6 +58,9 @@ export default {
   height: 50px;
   width: 50px;
 }
+.bm-item-list{
+ margin-top: 50px;
+}
 .cross-style{
   right: 10px;
   top: 28px;
@@ -81,6 +90,7 @@ body, html{
   margin: 0px;
   height: 100%;
   background-image: url("assets/Gradient_mesh_big.png");
+  background-size: cover;
 }
 #app {
   height: 100%;
@@ -179,13 +189,13 @@ body, html{
     transition: 2s;
     opacity: 1;
     z-index: 1;
-    -moz-animation: cssAnimation 0s ease-in 10s forwards;
+    -moz-animation: cssAnimation 0s ease-in 2s forwards;
     /* Firefox */
-    -webkit-animation: cssAnimation 0s ease-in 10s forwards;
+    -webkit-animation: cssAnimation 0s ease-in 2s forwards;
     /* Safari and Chrome */
-    -o-animation: cssAnimation 0s ease-in 10s forwards;
+    -o-animation: cssAnimation 0s ease-in 2s forwards;
     /* Opera */
-    animation: cssAnimation 0s ease-in 10s forwards;
+    animation: cssAnimation 0s ease-in 2s forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
@@ -242,5 +252,26 @@ svg {
     70% { transform: scale(1); opacity:-1;}
     80% { transform: scale(1.03); opacity:1;}
     100% { transform: scale(1); opacity: 1;}
+}
+@media only screen  and (min-width : 700px) {
+.bm-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+}
+.bm-item-list{
+  margin-left: 0;
+  font-size: 30px;
+}
+h3{
+  font-size: 5vw,
+}
+h4{
+  font-size:  3vw;
+}
+ol{
+  font-size: 2.5vw;
+}
 }
 </style>

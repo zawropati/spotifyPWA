@@ -113,6 +113,7 @@ h4{
   height: 70vh;
   background-image: url('../imgs/modalbg.png');
   background-position: center;
+  background-size: cover;
 }
 .modalmiddle{
   display: flex;
@@ -157,5 +158,18 @@ h4{
 Login{
   padding-top: 60px;
 }
-
+@media only screen  and (min-width : 700px) {
+h3{
+  font-size: 4vw,
+}
+h4{
+  font-size:  2.5vw;
+}
+ol{
+  font-size: 2vw;
+}
+.modal-container{
+  padding: 7vw;
+}
+}
 </style>

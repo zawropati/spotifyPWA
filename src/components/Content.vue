@@ -253,4 +253,10 @@ ol{
   text-align: left;
   font-size: 5vw;
 }
+@media only screen  and (min-width : 700px) {
+h2{
+  padding-left: 25vw;
+  padding-right: 25vw;
+}
+}
 </style>
