@@ -5,10 +5,14 @@
       <hr>
       <h2>Users in this playlist:</h2>
       <div class='usersOfPlaylist'>
-            <h3> {{ $root.userInfo.display_name }} </h3>
-            <img class='avatar' :src = '$root.userInfo.images[0].url'>
-            <h3> {{ otherUserInfo.display_name }} </h3>
-            <img class='avatar' :src = 'otherUserInfo.images[0].url'>  
+        <div class='oneUser'>
+          <img class='avatar' :src = '$root.userInfo.images[0].url'>
+          <h3> {{ $root.userInfo.display_name }} </h3>
+        </div>
+        <div class='oneUser'>
+          <img class='avatar' :src = 'otherUserInfo.images[0].url'>
+          <h3> {{ otherUserInfo.display_name }} </h3>
+        </div>
       </div>
       <button v-if="$route.query.id" class="openButton">
         <a class="inside-button" target="_blank" :href="`https://open.spotify.com/user/1175743727/playlist/${ $route.query.id }`"> 
@@ -84,6 +88,7 @@ h1{
 }
 h3{
   font-size: 4vw;
+  padding-left: 50px;
 }
 hr{
   display: block;
@@ -99,13 +104,20 @@ hr{
 }
 .usersOfPlaylist{
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.oneUser{
+  display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
+  padding-bottom: 15px;
 }
 .avatar{
   border-radius: 50%;
-  width: 25%;
+  width: 15%;
+  margin-left: 50px;
 }
 .inside-button{
     font-size: 0.875rem;
@@ -128,6 +140,5 @@ hr{
   letter-spacing: 0.0625rem;
   cursor: pointer;
   border: none;
-
 }
 </style>
