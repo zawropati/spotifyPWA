@@ -99,7 +99,8 @@ export default {
           finalarray.push(e1)
         }}
       ));
-      console.log({finalarray:finalarray});
+      //console.log({finalarray:finalarray});
+      console.log(Object.keys(this.$root.db)[1]);
       this.getArtistsTopSongs(finalarray)
     },
     getArtistsTopSongs(artists) {

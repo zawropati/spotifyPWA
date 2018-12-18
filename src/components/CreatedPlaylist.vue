@@ -5,9 +5,16 @@
       <hr>
       <h2>Users in this playlist:</h2>
       <div class='usersOfPlaylist'>
-        <h3> {{ $root.userInfo.display_name }} </h3>
-        <img class='avatar' :src = '$root.userInfo.images[0].url'>
+            <h3> {{ $root.userInfo.display_name }} </h3>
+            <img class='avatar' :src = '$root.userInfo.images[0].url'>
+            <h3> {{ otherUserInfo.display_name }} </h3>
+            <img class='avatar' :src = 'otherUserInfo.images[0].url'>  
       </div>
+      <button v-if="$route.query.id" class="openButton">
+        <a class="inside-button" target="_blank" :href="`https://open.spotify.com/user/1175743727/playlist/${ $route.query.id }`"> 
+        Play on Spotify
+        </a>
+      </button>
       <iframe
       class='spotifyPlugin'
       v-if="$route.query.id"
@@ -29,20 +36,33 @@ export default {
     data() {
     return {
       myInfo: {},
+      otherUserInfo: {}
     }
   },
   created () {
   },
   mounted(){
-    this.getUserInfo();
+    this.getMyInfo();
+    this.getOtherUser();
   },
   methods:{
-    getUserInfo(){
+    getMyInfo(){
       var that = this;
       this.$http.get('https://api.spotify.com/v1/me', {
         headers: { Authorization: "Bearer " + this.$root.token }
       }).then(function(response) {
         that.myInfo = response.data.items;
+      });
+    },
+    getOtherUser(){
+       var user = Object.keys(this.$root.db)[1]
+       console.log(user)
+       var that = this;
+      this.$http.get('https://api.spotify.com/v1/users/' + user, {
+        headers: { Authorization: "Bearer " + this.$root.token }
+      }).then(function(response) {
+        that.otherUserInfo = response.data;
+        console.log(that.otherUserInfo)
       });
     }
   }
@@ -86,5 +106,28 @@ hr{
 .avatar{
   border-radius: 50%;
   width: 25%;
+}
+.inside-button{
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+}
+.openButton{
+  background: #1F1A4E;
+  box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.5);
+  padding: 5px 15px;
+  font-size: 15px;
+  border-radius: 1.875rem;
+  height: 3.75rem;
+  padding: 0 3.4375rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  cursor: pointer;
+  border: none;
+
 }
 </style>
