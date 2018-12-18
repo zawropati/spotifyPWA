@@ -168,4 +168,79 @@ body, html{
   transform: translateX(10px);
   opacity: 0;
 }
+#loader-box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #3569b2, #305399, #2a3e80, #232a68, #1b1650);
+  }
+
+.hideMe {
+    transition: 2s;
+    opacity: 1;
+    z-index: 1;
+    -moz-animation: cssAnimation 0s ease-in 10s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 10s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 10s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 10s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    to {
+        opacity:0;
+        z-index: -3;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        opacity: 0;
+         z-index: -3;
+    }
+}
+.st0{
+  fill:#FFFFFF;}
+svg {
+  height: auto;
+  fill:#FFFFFF;
+  margin-top: 60%;
+  margin-left: 4.3em;
+}
+  #get{
+   animation-name: pulse_animation;
+    animation-duration: 1750ms;
+    transform-origin:40% 40%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;}
+
+#other {
+    animation-name: secondpulse_animation;
+    animation-duration: 1750ms;
+    transform-origin:40% 40%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;}
+
+@keyframes pulse_animation {
+    0% { transform: scale(1); }
+    30% { transform: scale(1); }
+    40% { transform: scale(1.05);}
+    50% { transform: scale(1);}
+    60% { transform: scale(1);}
+    70% { transform: scale(1);}
+    80% { transform: scale(1.05);}
+    100% { transform: scale(1);}
+}
+@keyframes secondpulse_animation {
+    0% { transform: scale(1); opacity: 1;} 
+    30% { transform: scale(1); opacity: 1;}
+    40% { transform: scale(1); opacity: -1;}
+    50% { transform: scale(1); opacity: -1;}
+    60% { transform: scale(1); opacity:-1;}
+    70% { transform: scale(1); opacity:-1;}
+    80% { transform: scale(1.03); opacity:1;}
+    100% { transform: scale(1); opacity: 1;}
+}
 </style>
