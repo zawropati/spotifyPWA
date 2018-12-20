@@ -177,7 +177,7 @@ Login{
   padding-left: 10px;
   font-family: CircularBook;
   line-height: 1.2em;
-  font-size: 0.5em;
+  font-size: 20px;
 }
 .modal-container{
     margin-left: 30%;
