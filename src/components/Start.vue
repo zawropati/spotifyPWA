@@ -14,10 +14,10 @@
                     <li>Click on Add To Homescreen</li>
                     <li>Tap Add to complete the process</li>
                     <li>Now launch the PWA from your Home screen by tapping its icon</li>
+                      <router-link class="learn-more" to="/">Learn More</router-link>
                   </ol>
                 </p>
-                <div><img class='mobileimg' src='../imgs/mobilephone.png'></div>
-                   <a href="x">Learn More</a>
+                <div><img class='mobileimg' src='../imgs/asset7.png'></div>
               </div>
               <!-- <span class='buttonwrapper'><button class='yesbutton'>Save Now</button></span> -->
               <a class='cancelbutton' @click.prevent="showModal = false">Cancel</a>
@@ -52,7 +52,7 @@ export default {
     }
   },
   created () {
-    setTimeout(() => {this.showModal = true}, 5000)
+    setTimeout(() => {this.showModal = true}, 3000)
   }
 }
 </script>
@@ -103,7 +103,6 @@ h4{
   text-align: left;
   color: white;
   font-size: 3.5vw;
-  padding-right: 20px;
   margin-top: 0;
 }
 .modal-container{
@@ -147,22 +146,49 @@ h4{
   cursor: pointer;
   font-weight: bold;
 }
+.learn-more{
+  color: white;
+  line-height: 4em;
+}
 .homescreenSteps{
+  padding-top: 10px;
   padding-left: 10px;
+  font-family: CircularBook;
+  line-height: 1.2em;
+  font-size: 1.1em;
+}
+li{
+  margin-bottom: 0.5em;
 }
 .homescreenSteps > li:before{
   font-weight: bold;
 }
 .mobileimg{
-  width: 100%;
-  margin-top: 80px;
+  width: 110%;
+  margin-top: 60px;
+  margin-left: 10px;
 }
 Login{
   padding-top: 60px;
 }
 @media only screen  and (min-width : 700px) {
+.homescreenSteps{
+  padding-top: 10px;
+  padding-left: 10px;
+  font-family: CircularBook;
+  line-height: 1.2em;
+  font-size: 0.5em;
+}
+.modal-container{
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 60vh;
+}
+.mobileimg{
+  margin-top: 100px;
+}
 h3{
-  font-size: 4vw,
+  font-size: 3vw;
 }
 h4{
   font-size:  2.5vw;
