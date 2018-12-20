@@ -246,6 +246,8 @@ h4{
   padding-top: 20px;
 }
 h2{
+  font-family: CircularBook;
+  font-weight: normal;
   font-size: 1.2rem;
   line-height: 1.55;
   margin-top: 0;
