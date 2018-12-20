@@ -136,7 +136,7 @@ hr{
     text-decoration: none;
 }
 .openButton{
-  background: #1F1A4E;
+  background-image: linear-gradient(to bottom, #3569b2, #305399, #2a3e80, #232a68, #1b1650);
   box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.5);
   padding: 5px 15px;
   font-size: 15px;

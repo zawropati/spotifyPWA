@@ -1,6 +1,6 @@
 <template>
   <button class="loginButton" @click.prevent="getSpotifyUser">
-    Login
+    Log in with Spotify 
   </button>
 </template>
 

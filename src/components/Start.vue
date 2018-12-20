@@ -5,9 +5,8 @@
         <div class="modal-mask" v-if="showModal">
           <div class="modal-wrapper">
             <div class="box col-sm-3 modal-container">
-              <a class="close-modal" id="show-modal" @click.prevent="showModal = false"><i class="close-icon fa fa-times "></i></a>
               <h3>Save as Web App</h3>
-              <h4>Progressive Web App offers a website’s lightweight version while looking like any traditional native app</h4>
+              <!-- <h4>Progressive Web App offers a website’s lightweight version while looking like any traditional native app</h4> -->
               <div class='modalmiddle'>
                 <p class='modalparagraph'>
                   <ol class='homescreenSteps'>
@@ -18,6 +17,7 @@
                   </ol>
                 </p>
                 <div><img class='mobileimg' src='../imgs/mobilephone.png'></div>
+                   <a href="x">Learn More</a>
               </div>
               <!-- <span class='buttonwrapper'><button class='yesbutton'>Save Now</button></span> -->
               <a class='cancelbutton' @click.prevent="showModal = false">Cancel</a>
@@ -81,8 +81,8 @@ h2{
   line-height: 1.55;
   margin-top: 0;
   margin-bottom: 60px;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 35px;
+  padding-right: 35px;
 }
 h3{
   color: #4DC3CA;
