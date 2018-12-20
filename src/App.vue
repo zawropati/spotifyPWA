@@ -254,6 +254,13 @@ svg {
     100% { transform: scale(1); opacity: 1;}
 }
 @media only screen  and (min-width : 700px) {
+svg {
+  width: 40%;
+  height: auto;
+  fill:#FFFFFF;
+  margin-top: 10%;
+  margin-left: 10%;
+}
 .bm-menu{
     display: flex;
     justify-content: center;
