@@ -170,4 +170,31 @@ hr{
   cursor: pointer;
   border: none;
 }
+@media only screen  and (min-width : 700px) {
+  h1{
+    font-size: 2.5rem;
+  }
+  h4{
+    font-size: 1.5vw;
+  }
+  h2{
+    font-size: 2vw;
+  }
+  h3{
+    font-size: 1.5vw;
+  }
+  .avatar{
+    margin-left:0;
+  }
+  .oneUser{
+    justify-content: center;
+}
+.openButton{
+    height: 3.75rem;
+    padding: 0px 3.4375rem;
+}
+.spotifyPlugin{
+  width: 40vw;
+}
+}
 </style>
