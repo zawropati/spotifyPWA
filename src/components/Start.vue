@@ -77,6 +77,7 @@ h1{
   padding-top: 30px;
 }
 h2{
+  font-family: CircularBook;
   font-size: 1rem;
   line-height: 1.55;
   margin-top: 0;
