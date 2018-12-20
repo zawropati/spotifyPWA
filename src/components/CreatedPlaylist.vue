@@ -104,6 +104,9 @@ h1{
   text-transform: uppercase;
   margin-bottom: 10px;
 }
+h2{
+  font-family: CircularBook;
+}
 h3{
   font-size: 4vw;
   padding-left: 20px;

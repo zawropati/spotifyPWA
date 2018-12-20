@@ -70,7 +70,7 @@ export default {
   padding: 0 20px;
 }
 h1{
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 1;
   margin-top: 15px;
   margin-bottom: 25px;
@@ -78,12 +78,13 @@ h1{
 }
 h2{
   font-family: CircularBook;
+  font-weight: normal;
   font-size: 1rem;
   line-height: 1.55;
   margin-top: 0;
   margin-bottom: 60px;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 h3{
   color: #4DC3CA;
