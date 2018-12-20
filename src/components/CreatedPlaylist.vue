@@ -16,7 +16,7 @@
         <div class='oneUser'>
           <img v-if="otherUserInfo.images.length != 0 " class='avatar' :src = 'otherUserInfo.images[0].url'>
           <h3> {{ otherUserInfo.display_name }} </h3>
-        </div>
+        </div> 
       </div>
       <button v-if="$route.query.id" class="openButton">
         <a class="inside-button" target="_blank" :href="`https://open.spotify.com/user/1175743727/playlist/${ $route.query.id }`"> 
@@ -45,7 +45,8 @@ export default {
     data() {
     return {
       myInfo: {},
-      otherUserInfo: {}
+      otherUserInfo: {},
+      user: null
     }
   },
   created () {
@@ -64,16 +65,19 @@ export default {
       });
     },
     getOtherUser(){
-       var user = Object.keys(this.$root.db)[0]
-       console.log(user)
+       var users = Object.keys(this.$root.db)
+       var myId = this.$root.userInfo.id
+       console.log(users)
+      for (var i = 0; i < users.length; i++) {
+       if(users[i] != myId){
        var that = this;
-      this.$http.get('https://api.spotify.com/v1/users/' + user, {
+      this.$http.get('https://api.spotify.com/v1/users/' + users[i], {
         headers: { Authorization: "Bearer " + this.$root.token }
       }).then(function(response) {
         that.otherUserInfo = response.data;
-        console.log(that.otherUserInfo)
+        //console.log(that.otherUserInfo)
       });
-    }
+    }}}
   }
 }
 </script>
