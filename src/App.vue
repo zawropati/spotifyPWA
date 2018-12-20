@@ -227,7 +227,7 @@ svg {
   margin-left: 4.3em;
 }
   #get{
-   animation-name: pulse_animation;
+    animation-name: pulse_animation;
     animation-duration: 1750ms;
     transform-origin:40% 40%;
     animation-iteration-count: infinite;
