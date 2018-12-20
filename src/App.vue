@@ -37,6 +37,14 @@ export default {
 </script>
 
 <style>
+@font-face {
+    font-family: CircularBlack;
+    src: url("./fonts/CircularStd-Black.otf") format("opentype");
+}
+@font-face {
+    font-family: CircularBook;
+    src: url("./fonts/CircularStd-Book.otf") format("opentype");
+}
 /* Burger menu styling start*/
 .bm-burger-button{
   height: 20px;
@@ -77,7 +85,6 @@ export default {
   font-size: 0.875rem;
   background-color: transparent;
   font-weight: 500;
-  text-transform: uppercase;
   letter-spacing: 0.0625rem;
   cursor: pointer;
 }
@@ -94,7 +101,7 @@ body, html{
 }
 #app {
   height: 100%;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'CircularBlack';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color:white;
@@ -220,7 +227,7 @@ svg {
   margin-left: 4.3em;
 }
   #get{
-   animation-name: pulse_animation;
+    animation-name: pulse_animation;
     animation-duration: 1750ms;
     transform-origin:40% 40%;
     animation-iteration-count: infinite;

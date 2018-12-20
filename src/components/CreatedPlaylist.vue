@@ -6,6 +6,7 @@
   <div class='playlistWrapper'>
     <div class="playlist">
       <h1>Demo playlist</h1>
+      <h4> {{ formatAMPM() }} </h4>
       <hr>
       <h2>Users in this playlist:</h2>
       <div class='usersOfPlaylist'>
@@ -20,7 +21,7 @@
       </div>
       <button v-if="$route.query.id" class="openButton">
         <a class="inside-button" target="_blank" :href="`https://open.spotify.com/user/1175743727/playlist/${ $route.query.id }`"> 
-        Play on Spotify
+        Open in Spotify
         </a>
       </button>
       <iframe
@@ -77,7 +78,14 @@ export default {
         that.otherUserInfo = response.data;
         //console.log(that.otherUserInfo)
       });
-    }}}
+    }}},
+    formatAMPM() {
+      var d = new Date(),
+      minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+      hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+      months = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+      return hours+':'+minutes+' '+d.getDate()+'/'+months[d.getMonth()]+'/'+d.getFullYear();
+    }
   }
 }
 </script>
@@ -94,10 +102,18 @@ export default {
 }
 h1{
   text-transform: uppercase;
+  margin-bottom: 10px;
+}
+h2{
+  font-family: CircularBook;
 }
 h3{
   font-size: 4vw;
   padding-left: 20px;
+}
+h4{
+  font-size: 3vw;
+  margin: 0;
 }
 hr{
   display: block;
@@ -109,12 +125,14 @@ hr{
   margin-right: auto;
 }
 .spotifyPlugin{
-  padding-top: 20px;
+  padding-top: 30px;
+  width: 100vw;
 }
 .usersOfPlaylist{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding-bottom: 20px;
 }
 .oneUser{
   display: flex;
@@ -131,7 +149,6 @@ hr{
 .inside-button{
     font-size: 0.875rem;
     font-weight: 500;
-    text-transform: uppercase;
     color: white;
     text-decoration: none;
 }
@@ -141,11 +158,10 @@ hr{
   padding: 5px 15px;
   font-size: 15px;
   border-radius: 1.875rem;
-  height: 3.75rem;
-  padding: 0 3.4375rem;
+  height: 2.75rem;
+  padding: 0 2.4375rem;
   font-size: 0.875rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.0625rem;
   cursor: pointer;
   border: none;
