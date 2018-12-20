@@ -106,12 +106,16 @@ h1{
 }
 h2{
   font-family: CircularBook;
+  font-weight: normal;
+  font-size: 4.5vw;
 }
 h3{
   font-size: 4vw;
   padding-left: 20px;
 }
 h4{
+  font-family: CircularBook;
+  font-weight: normal;
   font-size: 3vw;
   margin: 0;
 }
