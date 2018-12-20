@@ -214,6 +214,11 @@ export default {
   color: #1F1A4E;
   background-color: #FFFFFF;
 }
+.loginButton{
+  color: #1F1A4E;
+  background-color: white;
+  text-transform: uppercase;
+}
 .buttonwrapper{
   padding-top: 20px;
   text-align: center;
