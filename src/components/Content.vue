@@ -15,10 +15,12 @@
             <div class="modal-wrapper">
               <div class="box col-sm-3 modal-container">
                 <!-- <a class="close-modal" id="show-modal" @click.prevent="showModal = false"><i class="close-icon fa fa-times "></i></a> -->
-                <h3 class="subtitle">Share this key</h3>
+                <h3 class="subtitle">Share this Key</h3>
                 <ol>
                   <li>Copy the key and share it with your friends</li>
+                  <br/>
                   <li>Wait for them to accept</li>
+                  <br/>
                   <li>Come back to this app and see your Playlist</li>
                 </ol>
                 <h3 class='key'>keydemo</h3>
@@ -203,7 +205,7 @@ export default {
   position: relative;
   padding: 40px;
   height: 70vh;
-  background-color: #76C5CA;
+  background-image: linear-gradient(to bottom, #3569b2, #305399, #2a3e80, #232a68, #1b1650);
 }
 .close-modal{
   position:absolute;
@@ -218,6 +220,7 @@ export default {
   color: #1F1A4E;
   background-color: white;
   text-transform: uppercase;
+  padding: 0px 2.4375rem;
 }
 .buttonwrapper{
   padding-top: 20px;
@@ -229,12 +232,13 @@ export default {
   font-size: 1.2em;
   cursor: pointer;
   text-align: center;
+  font-family: CircularBook;
 }
 h1{
   text-transform: uppercase;
 }
 h3{
-  color: #1F1A4E;
+  color: white;;
   font-size: 2em;
   text-align: center;
   margin: 0;
@@ -262,7 +266,10 @@ h2{
 }
 ol{
   text-align: left;
-  font-size: 5vw;
+  font-size: 4vw;
+  font-family: CircularBook;
+  padding: 10px;
+  padding-left: 15px;
 }
 @media only screen  and (min-width : 700px) {
 h2{
