@@ -218,6 +218,8 @@ export default {
   background-color: white;
   text-transform: uppercase;
   padding: 0px 2.4375rem;
+  box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.5);
+
 }
 .buttonwrapper{
   padding-top: 20px;
