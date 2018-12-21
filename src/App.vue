@@ -193,8 +193,6 @@ body, html{
   }
 
 .hideMe {
-    display: flex;
-    justify-content: center;
     transition: 2s;
     opacity: 1;
     z-index: 1;
@@ -288,6 +286,10 @@ h4{
 }
 ol{
   font-size: 2.5vw;
+}
+.hideMe{
+  display: flex;
+  justify-content: center;
 }
 }
 </style>
