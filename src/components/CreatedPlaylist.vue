@@ -68,7 +68,7 @@ export default {
     getOtherUser(){
        var users = Object.keys(this.$root.db)
        var myId = this.$root.userInfo.id
-       console.log(users)
+       //console.log(users)
       for (var i = 0; i < users.length; i++) {
        if(users[i] != myId){
        var that = this;

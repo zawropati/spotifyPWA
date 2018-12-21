@@ -14,7 +14,7 @@
                     <li>Click on Add To Homescreen</li>
                     <li>Tap Add to complete the process</li>
                     <li>Now launch the PWA from your Home screen by tapping its icon</li>
-                      <router-link class="learn-more" to="/">Learn More</router-link>
+                      <router-link class="learn-more" to="/webapp">Learn More</router-link>
                   </ol>
                 </p>
                 <div><img class='mobileimg' src='../imgs/asset7.png'></div>
