@@ -104,8 +104,6 @@ export default {
           finalarray.push(e1)
         }}
       ));
-      //console.log({finalarray:finalarray});
-      console.log(Object.keys(this.$root.db)[1]);
       this.getArtistsTopSongs(finalarray)
     },
     getArtistsTopSongs(artists) {
@@ -124,7 +122,7 @@ export default {
           .then(function(response) {
             response.data.tracks.forEach(function(songs) {
               that.songsArray.push(songs);
-              console.log({songs:songs})
+              //console.log({songs:songs})
             });
           });
       }
@@ -144,7 +142,7 @@ export default {
         )
         .then(function(response) {
           that.createdPlaylist = response.data;
-          console.log({playlistid: that.createdPlaylist.id})
+          //console.log({playlistid: that.createdPlaylist.id})
           that.addtracks()
         });
     },
@@ -173,7 +171,7 @@ export default {
         )
         .then(function(response) {
           that.pushedTracks = response.data;
-          alert("Playlist created!" + that.createdPlaylist.id);
+          //alert("Playlist created!" + that.createdPlaylist.id);
           that.$router.push({ path: '/playlist', query: { id: that.createdPlaylist.id } });
         });
     },

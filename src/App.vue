@@ -56,7 +56,7 @@ export default {
   height: 10%;
 }
 .bm-menu{
-  background-color: #212055;
+  background-color: #212055 !important;
 }
 .bm-cross{
   background: white;
@@ -196,13 +196,13 @@ body, html{
     transition: 2s;
     opacity: 1;
     z-index: 1;
-    -moz-animation: cssAnimation 0s ease-in 5s forwards;
+    -moz-animation: cssAnimation 0s ease-in 2s forwards;
     /* Firefox */
-    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+    -webkit-animation: cssAnimation 0s ease-in 2s forwards;
     /* Safari and Chrome */
-    -o-animation: cssAnimation 0s ease-in 5s forwards;
+    -o-animation: cssAnimation 0s ease-in 2s forwards;
     /* Opera */
-    animation: cssAnimation 0s ease-in 5s forwards;
+    animation: cssAnimation 0s ease-in 2s forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
