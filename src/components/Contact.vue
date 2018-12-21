@@ -5,15 +5,20 @@
         </h1>  
         <h2>
             Send us an email.
-             <br><br>
+             <br/>
             office@spotify.com
-          <br> 
-            Come visit us.<br>
-            Spotify AB <br>
-            Regeringsgatan 19 <br>
-            SE-111 53 Stockholm <br>
-            Sweden  
         </h2>
+        <h2>
+            Come visit us.
+            <br/>
+            Spotify AB
+            <br/>
+            Regeringsgatan 19
+            <br/>
+            SE-111 53 Stockholm
+            <br/>
+            Sweden
+          </h2>
            <div class='backContainer' @click.prevent="goBack"> 
              <img class='backArrow' src="./../imgs/arrow.png"><a id="back"> Go back</a>
            </div>
