@@ -212,12 +212,15 @@ export default {
 .createPlaylistButton{
   color: #1F1A4E;
   background-color: #FFFFFF;
+  box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.16);
 }
 .loginButton{
   color: #1F1A4E;
   background-color: white;
   text-transform: uppercase;
   padding: 0px 2.4375rem;
+  font-family: CircularBlack;
+  box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.16);
 }
 .buttonwrapper{
   padding-top: 20px;
@@ -250,6 +253,7 @@ h4{
 .key{
   text-align: center;
   padding-top: 20px;
+  color: #76C5CA;
 }
 h2{
   font-family: CircularBook;

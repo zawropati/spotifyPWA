@@ -2,7 +2,7 @@
       <div class="menu-option">
         <h1>
           Your wish is our command.
-        </h1>  
+        </h1> 
         <h2>
           You asked for it, so here it is. We have created a tool for you to be able to generate an algorithm curated playlists with other people. 
           <br><br>

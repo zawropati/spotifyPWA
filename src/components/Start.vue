@@ -145,6 +145,7 @@ h4{
   font-size: 1.2em;
   cursor: pointer;
   font-weight: bold;
+  font-family: CircularBook;
 }
 .learn-more{
   color: white;
@@ -167,6 +168,9 @@ li{
   width: 110%;
   margin-top: 60px;
   margin-left: 10px;
+}
+.loginButton{
+  font-family: CircularBlack;
 }
 Login{
   padding-top: 60px;
