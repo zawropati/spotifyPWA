@@ -5,15 +5,15 @@
         <img class='logo' src='./imgs/Spotifytogetherlogo.png' alt='logo'>
       </router-link>
     <Slide v-if='$route.name != "CreatedPlaylist" ' right :width='dynWidth'>
-      <a id="about" href="#">
+      <router-link to="/about" id="about">
         <span>About</span>
-      </a>
-      <a id="contact" href="#">
+      </router-link>
+      <router-link to="/contact" id="contact" href="#">
         <span>Contact</span>
-      </a>
-      <a id="whyWebApp" href="#">
+      </router-link>
+      <router-link to="webapp" id="whyWebApp" href="#">
         <span>Why Web App</span>
-      </a>
+      </router-link>
     </Slide>
     </header>
     <router-view></router-view>
