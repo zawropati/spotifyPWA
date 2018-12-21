@@ -172,7 +172,6 @@ export default {
           }
         )
         .then(function(response) {
-          
           that.pushedTracks = response.data;
           alert("Playlist created!" + that.createdPlaylist.id);
           that.$router.push({ path: '/playlist', query: { id: that.createdPlaylist.id } });
@@ -275,6 +274,23 @@ ol{
 h2{
   padding-left: 25vw;
   padding-right: 25vw;
+}
+.modal-container{
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 60vh;
+}
+h3{
+  font-size: 3vw;
+}
+h4{
+  font-size:  2.5vw;
+}
+ol{
+  font-size: 2vw;
+}
+.modal-container{
+  padding: 7vw;
 }
 }
 </style>

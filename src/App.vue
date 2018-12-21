@@ -193,16 +193,18 @@ body, html{
   }
 
 .hideMe {
+    display: flex;
+    justify-content: center;
     transition: 2s;
     opacity: 1;
     z-index: 1;
-    -moz-animation: cssAnimation 0s ease-in 2s forwards;
+    -moz-animation: cssAnimation 0s ease-in 5s forwards;
     /* Firefox */
-    -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
     /* Safari and Chrome */
-    -o-animation: cssAnimation 0s ease-in 2s forwards;
+    -o-animation: cssAnimation 0s ease-in 5s forwards;
     /* Opera */
-    animation: cssAnimation 0s ease-in 2s forwards;
+    animation: cssAnimation 0s ease-in 5s forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
@@ -215,7 +217,7 @@ body, html{
 @-webkit-keyframes cssAnimation {
     to {
         opacity: 0;
-         z-index: -3;
+        z-index: -3;
     }
 }
 .st0{
@@ -251,7 +253,7 @@ svg {
     100% { transform: scale(1);}
 }
 @keyframes secondpulse_animation {
-    0% { transform: scale(1); opacity: 1;} 
+    0% { transform: scale(1); opacity: 1;}
     30% { transform: scale(1); opacity: 1;}
     40% { transform: scale(1); opacity: -1;}
     50% { transform: scale(1); opacity: -1;}
