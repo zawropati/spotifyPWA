@@ -16,8 +16,8 @@
               <li>Always up-to-date</li>
           </ul>   
         </h2>
-           <div @click.prevent="goBack"> 
-             <img src="./../imgs/arrow.png"><a id="back"> Go back</a>
+           <div class='backContainer' @click.prevent="goBack"> 
+             <img class='backArrow' src="./../imgs/arrow.png"><a id="back"> Go back</a>
            </div>
       </div>
 </template>
@@ -59,7 +59,16 @@ h2{
   background-color: white;
   text-transform: uppercase;
 }
+.backContainer{
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+}
+.backArrow{
+  cursor: pointer;
+}
 #back{
-    margin-bottom: 10px;
+  cursor: pointer;
+  padding-left: 20px;
 }
 </style>
