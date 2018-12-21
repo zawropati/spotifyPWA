@@ -8,8 +8,8 @@
           <br><br>
           The created playlist will have songs picked based on your mutual taste in music.
         </h2>
-           <div @click.prevent="goBack"> 
-             <img src="./../imgs/arrow.png"><a id="back"> Go back</a>
+           <div class='backContainer' @click.prevent="goBack"> 
+             <img  class='backArrow' src="./../imgs/arrow.png"><a id="back"> Go back</a>
            </div>
       </div>
 </template>
@@ -50,5 +50,17 @@ h2{
   color: #1F1A4E;
   background-color: white;
   text-transform: uppercase;
+}
+.backContainer{
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+}
+.backArrow{
+  cursor: pointer;
+}
+#back{
+  cursor: pointer;
+  padding-left: 20px;
 }
 </style>
