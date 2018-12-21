@@ -47,31 +47,31 @@ export default {
 }
 /* Burger menu styling start*/
 .bm-burger-button{
-  height: 20px;
+  height: 20px !important; 
 }
 .bm-burger-bars {
-  background-color: white;
+  background-color: white !important;
 }
 .line-style {
-  height: 10%;
+  height: 10% !important;
 }
 .bm-menu{
   background-color: #212055 !important;
 }
 .bm-cross{
-  background: white;
+  background: white !important;
   height: 40px !important;
 }
 .bm-cross-button {
-  height: 50px;
-  width: 50px;
+  height: 50px !important;
+  width: 50px !important;
 }
 .bm-item-list{
- margin-top: 50px;
+ margin-top: 50px !important;
 }
 .cross-style{
-  right: 10px;
-  top: 28px;
+  right: 10px!important;
+  top: 28px !important;
 }
 /* Burger menu styling end*/
 .loginButton{
