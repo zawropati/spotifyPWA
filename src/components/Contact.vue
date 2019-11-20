@@ -1,8 +1,8 @@
 <template>
-      <div class="menu-option">
+    <div class="menu-option">
         <h1>
             Contact Us
-        </h1>  
+        </h1>
         <h2>
             Send us an email.
         </h2>
@@ -21,20 +21,20 @@
             SE-111 53 Stockholm
             <br/>
             Sweden
-          </h3>
-           <div class='backContainer' @click.prevent="goBack"> 
-             <img class='backArrow' src="./../imgs/arrow.png"><a id="back"> Go back</a>
-           </div>
-      </div>
+        </h3>
+        <div class='backContainer' @click.prevent="goBack"> 
+            <img class='backArrow' src="./../imgs/arrow.png"><a id="back"> Go back</a>
+        </div>
+    </div>
 </template>
 
 <script>
 export default {
   name: 'Contact',
   methods:{
-      goBack(){
-          this.$router.go(-1)
-  }
+    goBack(){
+        this.$router.go(-1)
+    }
   }
 }
 </script>
